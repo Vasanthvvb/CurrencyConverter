@@ -70,12 +70,10 @@ leftRate.addEventListener('keyup', function(e){
     if((fetchedRate1 != "") && (fetchedRate2 != "")){
       if(fetchedRate1 < fetchedRate2){
         var resultRate = (leftRate.value*fetchedRate2) / fetchedRate1;
-        console.log(resultRate);
         rightRate.value = resultRate.toFixed(3);
       }
       if(fetchedRate1 > fetchedRate2){
         var resultRate = (leftRate.value*fetchedRate2) / fetchedRate1;
-        console.log(resultRate);
         rightRate.value = resultRate.toFixed(3); 
       }
     }
