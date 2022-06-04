@@ -68,11 +68,11 @@ leftRate.addEventListener('input', function(e){
   if((fetchedRate1 != "") && (fetchedRate2 != "")){
     if(fetchedRate1 < fetchedRate2){
       var resultRate = (leftRate.value*fetchedRate2) / fetchedRate1;
-      rightRate.value = resultRate.toFixed(3);
+      rightRate.value = resultRate.toFixed(2);
     }
     if(fetchedRate1 > fetchedRate2){
       var resultRate = (leftRate.value*fetchedRate2) / fetchedRate1;
-      rightRate.value = resultRate.toFixed(3); 
+      rightRate.value = resultRate.toFixed(2); 
     }
   }
 });
@@ -81,11 +81,11 @@ rightRate.addEventListener('input', function(e){
   if((fetchedRate1 != "") && (fetchedRate2 != "")){
     if(fetchedRate1 < fetchedRate2){
       var resultRate = (rightRate.value*fetchedRate1) / fetchedRate2;
-      leftRate.value = resultRate.toFixed(3);
+      leftRate.value = resultRate.toFixed(2);
     }
     if(fetchedRate1 > fetchedRate2){
       var resultRate = (rightRate.value*fetchedRate1) / fetchedRate2;
-      leftRate.value = resultRate.toFixed(3);
+      leftRate.value = resultRate.toFixed(2);
     }
   }
 });
