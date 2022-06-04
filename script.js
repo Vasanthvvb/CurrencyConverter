@@ -64,34 +64,28 @@ dropdown2.addEventListener('change', function(){
 });
 
 //Converting currency values
-leftRate.addEventListener('keyup', function(e){
-  var keyCode = e.keyCode;
-  if((keyCode>=48 && keyCode<=58) || keyCode==109 || keyCode==8){
-    if((fetchedRate1 != "") && (fetchedRate2 != "")){
-      if(fetchedRate1 < fetchedRate2){
-        var resultRate = (leftRate.value*fetchedRate2) / fetchedRate1;
-        rightRate.value = resultRate.toFixed(3);
-      }
-      if(fetchedRate1 > fetchedRate2){
-        var resultRate = (leftRate.value*fetchedRate2) / fetchedRate1;
-        rightRate.value = resultRate.toFixed(3); 
-      }
+leftRate.addEventListener('input', function(e){
+  if((fetchedRate1 != "") && (fetchedRate2 != "")){
+    if(fetchedRate1 < fetchedRate2){
+      var resultRate = (leftRate.value*fetchedRate2) / fetchedRate1;
+      rightRate.value = resultRate.toFixed(3);
+    }
+    if(fetchedRate1 > fetchedRate2){
+      var resultRate = (leftRate.value*fetchedRate2) / fetchedRate1;
+      rightRate.value = resultRate.toFixed(3); 
     }
   }
 });
 
-rightRate.addEventListener('keyup', function(e){
-  var keyCode = e.keyCode;
-  if((keyCode>=48 && keyCode<=58) || keyCode==109 || keyCode==8){
-    if((fetchedRate1 != "") && (fetchedRate2 != "")){
-      if(fetchedRate1 < fetchedRate2){
-        var resultRate = (rightRate.value*fetchedRate1) / fetchedRate2;
-        leftRate.value = resultRate.toFixed(3);
-      }
-      if(fetchedRate1 > fetchedRate2){
-        var resultRate = (rightRate.value*fetchedRate1) / fetchedRate2;
-        leftRate.value = resultRate.toFixed(3);
-      }
+rightRate.addEventListener('input', function(e){
+  if((fetchedRate1 != "") && (fetchedRate2 != "")){
+    if(fetchedRate1 < fetchedRate2){
+      var resultRate = (rightRate.value*fetchedRate1) / fetchedRate2;
+      leftRate.value = resultRate.toFixed(3);
+    }
+    if(fetchedRate1 > fetchedRate2){
+      var resultRate = (rightRate.value*fetchedRate1) / fetchedRate2;
+      leftRate.value = resultRate.toFixed(3);
     }
   }
 });
